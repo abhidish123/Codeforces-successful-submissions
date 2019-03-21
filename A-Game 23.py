@@ -1,0 +1,29 @@
+import math
+n,m=map(int,input().split())
+if(n==m):
+    print("0")
+elif(m<n):
+    print("-1")
+elif((m/n)!=int(m/n)):
+    print("-1")
+else:
+    v=int(m/n)
+    #print(v)
+    cnt=0
+    if(v%2!=0 and v%3!=0):
+        print("-1")
+    else:
+        k=0
+        while(v>1):
+            if(v%2==0):
+                v=int(v/2)
+            elif(v%3==0):
+                v=int(v/3)
+            else:
+                k=1
+                print("-1")
+                break
+            #print(v)
+            cnt+=1
+        if(k==0):
+            print(cnt)
